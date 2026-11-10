@@ -24,24 +24,22 @@ function Index() {
   return (
     <main>
       {/* Hero — the real neon logo mark */}
-      <section className="grain relative flex min-h-[640px] flex-col overflow-hidden bg-hero-ink md:min-h-[730px]">
+      <section className="grain relative flex flex-col overflow-hidden bg-hero-ink pt-24">
         <img
           src={logoAsset.url}
           alt="Hot Box Records"
           width={1920}
           height={1096}
-          className="absolute inset-0 h-full w-full object-contain object-center"
+          className="mx-auto w-full max-w-[1200px] object-contain px-4"
         />
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-hero-ink to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        <div className="relative flex-1" />
-        <div className="relative flex flex-wrap items-center justify-between gap-6 px-8 pb-10">
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-6 px-8 pb-10 pt-8">
           <p className="font-display text-2xl font-black uppercase leading-tight text-primary">Hallandale<br />Beach</p>
           <p className="flex flex-wrap items-center gap-3 font-display font-bold uppercase text-primary">
             Industry sound <Burst className="h-5 w-5" /> Professional V/O <Burst className="h-5 w-5" /> Release-ready
           </p>
           <PillLink to="/faq">Learn More</PillLink>
         </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
       </section>
 
       {/* Engineer — your photo */}
