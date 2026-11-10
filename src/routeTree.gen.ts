@@ -10,63 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as RatesRouteImport } from './routes/rates'
-import { Route as RoomsRouteImport } from './routes/rooms'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as FaqRouteImport } from './routes/faq'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RatesRoute = RatesRouteImport.update({
-  id: '/rates',
-  path: '/rates',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RoomsRoute = RoomsRouteImport.update({
-  id: '/rooms',
-  path: '/rooms',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
-  '/rates': typeof RatesRoute
-  '/rooms': typeof RoomsRoute
+  '/book': typeof BookRoute
+  '/faq': typeof FaqRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
-  '/rates': typeof RatesRoute
-  '/rooms': typeof RoomsRoute
+  '/book': typeof BookRoute
+  '/faq': typeof FaqRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
-  '/rates': typeof RatesRoute
-  '/rooms': typeof RoomsRoute
+  '/book': typeof BookRoute
+  '/faq': typeof FaqRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/rates' | '/rooms'
+  fullPaths: '/' | '/book' | '/faq'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/rates' | '/rooms'
-  id: '__root__' | '/' | '/contact' | '/rates' | '/rooms'
+  to: '/' | '/book' | '/faq'
+  id: '__root__' | '/' | '/book' | '/faq'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ContactRoute: typeof ContactRoute
-  RatesRoute: typeof RatesRoute
-  RoomsRoute: typeof RoomsRoute
+  BookRoute: typeof BookRoute
+  FaqRoute: typeof FaqRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,25 +68,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/rates': {
-      id: '/rates'
-      path: '/rates'
-      fullPath: '/rates'
-      preLoaderRoute: typeof RatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rooms': {
-      id: '/rooms'
-      path: '/rooms'
-      fullPath: '/rooms'
-      preLoaderRoute: typeof RoomsRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -104,9 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ContactRoute: ContactRoute,
-  RatesRoute: RatesRoute,
-  RoomsRoute: RoomsRoute,
+  BookRoute: BookRoute,
+  FaqRoute: FaqRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
