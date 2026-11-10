@@ -73,6 +73,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-hero-ink: var(--hero-ink);
 }
 
 :root {
@@ -99,6 +100,8 @@
   --chart-1: oklch(0.93 0.2 112); --chart-2: oklch(0.55 0.07 245); --chart-3: oklch(0.76 0.12 120); --chart-4: oklch(0.72 0.25 340); --chart-5: oklch(0.3 0.06 280);
   --sidebar: oklch(0.2 0.06 280); --sidebar-foreground: oklch(0.93 0.2 112); --sidebar-primary: oklch(0.93 0.2 112); --sidebar-primary-foreground: oklch(0.2 0.06 280); --sidebar-accent: oklch(0.3 0.06 280); --sidebar-accent-foreground: oklch(0.93 0.2 112); --sidebar-border: oklch(0.93 0.2 112); --sidebar-ring: oklch(0.93 0.2 112);
   --glow-neon: 0 0 6px var(--accent), 0 0 18px var(--accent), 0 0 40px color-mix(in oklab, var(--accent) 60%, transparent);
+  /* Pure-black field behind the neon logo mark: matches the mark's own background so it never seams. */
+  --hero-ink: oklch(0 0 0);
 }
 
 @layer base {
