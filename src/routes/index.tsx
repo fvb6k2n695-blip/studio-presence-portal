@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Burst, PillLink } from "@/components/site-chrome";
-import hero from "@/assets/hero-grain.jpg";
-import engineer from "@/assets/engineer.jpg";
-import face from "@/assets/face-grain.jpg";
+import logoAsset from "@/assets/hot-box-records-logo.png.asset.json";
+import portraitAsset from "@/assets/producer-portrait.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,16 +23,17 @@ const links = [
 function Index() {
   return (
     <main>
-      {/* Hero */}
+      {/* Hero — the real neon logo mark */}
       <section className="grain relative flex min-h-[640px] flex-col overflow-hidden bg-background">
-        <img src={hero} alt="" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={logoAsset.url}
+          alt="Hot Box Records"
+          width={1920}
+          height={1096}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        <div className="relative flex flex-1 flex-col items-center justify-center pt-16 text-center">
-          <h1 className="neon-sign animate-flicker -rotate-6 text-[7rem] normal-case leading-none md:text-[11rem]" style={{ fontWeight: 400 }}>
-            Hot Box
-          </h1>
-          <p className="mt-2 text-2xl tracking-[0.4em] text-accent-foreground/90" style={{ textShadow: "var(--glow-neon)" }}>RECORDS</p>
-        </div>
+        <div className="relative flex-1" />
         <div className="relative flex flex-wrap items-center justify-between gap-6 px-8 pb-10">
           <p className="font-display text-2xl font-black uppercase leading-tight text-primary">Hallandale<br />Beach</p>
           <p className="flex flex-wrap items-center gap-3 font-display font-bold uppercase text-primary">
@@ -43,9 +43,16 @@ function Index() {
         </div>
       </section>
 
-      {/* Engineer */}
+      {/* Engineer — your photo */}
       <section className="grid md:grid-cols-2">
-        <img src={engineer} alt="Kevin Diaz, main engineer" loading="lazy" width={1024} height={1088} className="h-full min-h-[480px] w-full object-cover" />
+        <img
+          src={portraitAsset.url}
+          alt="Hot Box Records producer and engineer"
+          loading="lazy"
+          width={1536}
+          height={1920}
+          className="h-full min-h-[480px] w-full object-cover object-[center_22%]"
+        />
         <div className="grain flex flex-col justify-between bg-card p-10 md:p-14">
           <div>
             <div className="flex items-center gap-5">
@@ -86,7 +93,14 @@ function Index() {
             </div>
           </dl>
         </div>
-        <img src={face} alt="" loading="lazy" width={1024} height={1152} className="h-full min-h-[480px] w-full object-cover" />
+        <img
+          src={portraitAsset.url}
+          alt="Hot Box Records producer and engineer"
+          loading="lazy"
+          width={1536}
+          height={1920}
+          className="h-full min-h-[480px] w-full object-cover object-[center_12%]"
+        />
       </section>
     </main>
   );
