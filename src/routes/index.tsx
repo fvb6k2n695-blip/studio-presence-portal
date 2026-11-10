@@ -24,14 +24,15 @@ function Index() {
   return (
     <main>
       {/* Hero — the real neon logo mark */}
-      <section className="grain relative flex min-h-[640px] flex-col overflow-hidden bg-background">
+      <section className="grain relative flex min-h-[640px] flex-col overflow-hidden bg-hero-ink md:min-h-[730px]">
         <img
           src={logoAsset.url}
           alt="Hot Box Records"
           width={1920}
           height={1096}
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-contain object-center"
         />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-hero-ink to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         <div className="relative flex-1" />
         <div className="relative flex flex-wrap items-center justify-between gap-6 px-8 pb-10">
